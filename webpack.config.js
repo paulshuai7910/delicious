@@ -20,8 +20,16 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.worker\.js$/,
+        use: { loader: "worker-loader" },
       },
       {
         test: /\.js$|\.jsx$/,
@@ -38,7 +46,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "out put react",
+      title: "Hello, Delicious",
       template: "./template.html",
     }),
     new WebpackManifestPlugin({}),
