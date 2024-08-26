@@ -28,3 +28,8 @@ Open another terminal window, run: yarn start
 # notes
 
 My plan is to configure a docker, put the arango and redis images in it, initialize the csv data and store it in arango, and use redis to cache the api data. Unfortunately, my windows computer cannot install docker due to version issues.
+
+# todo
+
+1. typescript
+2. api Chunked Transfer
