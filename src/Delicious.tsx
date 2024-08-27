@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SimpleSlider from "./Slick";
 
-const DeliciousComponent = () => {
+const DeliciousComponent: React.FC = () => {
   return (
     <div className="delicious_container">
       {/* <SimpleSlider /> */}

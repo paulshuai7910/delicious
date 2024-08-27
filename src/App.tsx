@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, FC } from "react";
 import DeliciousComponent from "./Delicious";
 import "./app.scss";
 
-function App() {
-  const [Loading, setLoading] = useState(true);
+const App: FC = () => {
+  const [Loading, setLoading] = useState<Boolean>(true);
   useEffect(() => {
     // create Web Worker
     const worker = new Worker(new URL("./utils/worker.js", import.meta.url));
@@ -28,6 +28,6 @@ function App() {
       {Loading ? <p>local database loading...</p> : <DeliciousComponent />}
     </div>
   );
-}
+};
 
 export default App;

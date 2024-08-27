@@ -4,7 +4,7 @@ const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 
 module.exports = {
   entry: {
-    index: "./src/index.js",
+    index: "./src/index.tsx",
   },
   mode: "development",
   output: {
@@ -42,7 +42,15 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.tsx?$/, // match .ts and .tsx
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
     ],
+  },
+  resolve: {
+    extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
   },
   plugins: [
     new HtmlWebpackPlugin({

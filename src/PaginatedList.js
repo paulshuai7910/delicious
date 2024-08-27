@@ -65,11 +65,7 @@ const PaginatedList = () => {
   );
   const currentList = useMemo(() => {
     return currentData.map((item) => (
-      <ListItem
-        key={item.id}
-        item={item}
-        handleLocalInMap={handleLocalInMap}
-      ></ListItem>
+      <ListItem item={item} handleLocalInMap={handleLocalInMap} />
     ));
   }, [currentData]);
 
@@ -80,13 +76,13 @@ const PaginatedList = () => {
           <h1>Today Delicious (all data)</h1>
           <div className="paginated_container_data_list">{currentList}</div>
           <div className="paginated_container_data_btns">
-            <div
+            <button
               className="btn"
               onClick={handlePrevPage}
-              disabled={currentPage === 1}
+              // disabled={new Boolean(currentPage === 1)}
             >
               Previous
-            </div>
+            </button>
             <div className="btn" onClick={handleNextPage}>
               Next
             </div>
