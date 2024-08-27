@@ -65,7 +65,7 @@ const PaginatedList = () => {
   );
   const currentList = useMemo(() => {
     return currentData.map((item) => (
-      <ListItem item={item} handleLocalInMap={handleLocalInMap} />
+      <ListItem key={item.id} item={item} handleLocalInMap={handleLocalInMap} />
     ));
   }, [currentData]);
 
